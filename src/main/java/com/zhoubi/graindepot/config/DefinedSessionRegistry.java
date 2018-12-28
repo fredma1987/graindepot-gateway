@@ -1,8 +1,8 @@
 package com.zhoubi.graindepot.config;
 
+import com.zhoubi.graindepot.bean.UserBean;
+import com.zhoubi.graindepot.biz.UserSecurity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.session.SessionDestroyedEvent;
-import org.springframework.security.core.session.SessionInformation;
 import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Component;
@@ -17,14 +17,14 @@ import java.util.Date;
 public class DefinedSessionRegistry extends SessionRegistryImpl {
     @Autowired
     private HttpServletRequest request;
+    @Autowired
+    private UserSecurity userSecurity;
 
     @Override
-    public void onApplicationEvent(SessionDestroyedEvent event) {
-        SessionInformation sessionInformation = getSessionInformation(event.getId());
-        if (sessionInformation != null) {
-            //将退出记录到表中
-            User user = (User) sessionInformation.getPrincipal();
-        }
-        super.onApplicationEvent(event);
+    public void registerNewSession(String sessionId, Object principal) {
+        super.registerNewSession(sessionId, principal);
+        User user = (User) principal;
+        UserBean currentUser = userSecurity.getUserByUsername(user.getUsername());
+        request.getSession().setAttribute("currentUser", currentUser);
     }
 }

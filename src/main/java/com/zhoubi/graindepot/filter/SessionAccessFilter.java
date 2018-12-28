@@ -78,9 +78,9 @@ public class SessionAccessFilter extends ZuulFilter {
                     Base64Utils.encodeToString(user.getUsername().getBytes()));
 
             //将当前用户放入头部校验信息
-            ctx.addZuulRequestHeader("X-AUTH-ID",
+           /* ctx.addZuulRequestHeader("X-AUTH-ID",
                     Base64Utils.encodeToString(((String) httpSession.getAttribute("currentUser")).getBytes()));
-
+*/
             // 查找合法链接
         }// 不进行拦截的地址
 

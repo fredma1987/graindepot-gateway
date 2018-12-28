@@ -19,7 +19,6 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @EnableFeignClients
 @EnableZuulProxy
 @EnableRedisHttpSession(redisFlushMode = RedisFlushMode.IMMEDIATE)
-@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 public class GraindepotGatewayApplication extends SpringBootServletInitializer {
     public static void main(String[] args) {
         SpringApplication.run(GraindepotGatewayApplication.class, args);

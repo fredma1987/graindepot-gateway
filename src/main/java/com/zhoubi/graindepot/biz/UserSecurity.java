@@ -20,10 +20,10 @@ public class UserSecurity {
     private IUserService userService;
 
     @HystrixCommand(fallbackMethod = "fallbackMethod")
+    //获取当前登录用户，登录专用方法
     public UserBean getUserByUsername(String username) {
         return userService.getUserByUsername(username);
     }
-
     public UserBean fallbackMethod(String username) {
         return new UserBean();
     }

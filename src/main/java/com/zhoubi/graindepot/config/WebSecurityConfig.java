@@ -20,10 +20,12 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private GateUserDetailsService detailsService;
-
+    @Autowired
+    private DefinedSessionRegistry sessionRegistry;
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.formLogin().loginPage("/login").defaultSuccessUrl("/main", true).permitAll()
+        http.formLogin().loginPage("/login")
+                .defaultSuccessUrl("/main", true).permitAll()
                 .and().logout().logoutUrl("/logout").logoutSuccessUrl("/login").invalidateHttpSession(true).permitAll()
                 .and().authorizeRequests()
                 .antMatchers("/assets/**").permitAll()
@@ -43,6 +45,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // 禁用缓存
         http.headers().cacheControl();
         http.headers().contentTypeOptions().disable();
+
+        //1.可设置同一个用户最多同时登录的个数，
+        //2.目的是在登录成功后通过sessionRegistry将用户放入session中便于后面使用
+        http.sessionManagement().maximumSessions(1000).sessionRegistry(sessionRegistry);
     }
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {

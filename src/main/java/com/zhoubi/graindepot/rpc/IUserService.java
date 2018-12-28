@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("api")
 public interface IUserService {
     @RequestMapping(value = "/user/username/{username}", method = RequestMethod.GET)
-    public UserBean getUserByUsername(@PathVariable("username") String username);
+    UserBean getUserByUsername(@PathVariable("username") String username);
+    @RequestMapping(value = "/feignTest", method = RequestMethod.GET)
+    UserBean feignTest(@PathVariable("username") String username);
 
 
 }
