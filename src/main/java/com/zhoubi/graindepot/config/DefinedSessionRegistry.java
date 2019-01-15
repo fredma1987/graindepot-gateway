@@ -1,5 +1,6 @@
 package com.zhoubi.graindepot.config;
 
+import com.zhoubi.graindepot.bean.BaseUser;
 import com.zhoubi.graindepot.bean.UserBean;
 import com.zhoubi.graindepot.biz.UserSecurity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class DefinedSessionRegistry extends SessionRegistryImpl {
     public void registerNewSession(String sessionId, Object principal) {
         super.registerNewSession(sessionId, principal);
         User user = (User) principal;
-        UserBean currentUser = userSecurity.getUserByUsername(user.getUsername());
+        BaseUser currentUser = userSecurity.getUserByUsername(user.getUsername());
         request.getSession().setAttribute("currentUser", currentUser);
     }
 }

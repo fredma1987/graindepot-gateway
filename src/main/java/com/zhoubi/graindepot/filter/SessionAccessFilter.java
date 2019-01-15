@@ -64,27 +64,8 @@ public class SessionAccessFilter extends ZuulFilter {
     public Object run() {
 
         RequestContext ctx = RequestContext.getCurrentContext();
-        HttpSession httpSession = ctx.getRequest().getSession();
         HttpServletRequest request = ctx.getRequest();
         final String requestUri = request.getRequestURI();
-        final String method = request.getMethod();
-        User user = getSessionUser(httpSession);
-        String username = null;
-        if (user != null) {
-            username = user.getUsername();
-            setCurrentUser(httpSession, username);
-            // 设置头部校验信息
-            ctx.addZuulRequestHeader("Authorization",
-                    Base64Utils.encodeToString(user.getUsername().getBytes()));
-
-            //将当前用户放入头部校验信息
-           /* ctx.addZuulRequestHeader("X-AUTH-ID",
-                    Base64Utils.encodeToString(((String) httpSession.getAttribute("currentUser")).getBytes()));
-*/
-            // 查找合法链接
-        }// 不进行拦截的地址
-
-
         if (isStartWith(requestUri) || isContains(requestUri) || isOAuth(requestUri)) {
             return null;
         }
@@ -101,26 +82,7 @@ public class SessionAccessFilter extends ZuulFilter {
         return requestUri.startsWith(oauthPrefix);
     }
 
-    /**
-     * 返回session中的用户信息
-     *
-     * @param httpSession
-     * @return
-     */
-    private User getSessionUser(HttpSession httpSession) {
-        Session session = repository.getSession(httpSession.getId());
-        if (httpSession.getAttribute("SPRING_SECURITY_CONTEXT") == null)
-            return null;
-        SecurityContextImpl securityContextImpl =
-                (SecurityContextImpl) httpSession.getAttribute("SPRING_SECURITY_CONTEXT");
-        return (User) securityContextImpl.getAuthentication().getPrincipal();
-    }
 
-    private void setCurrentUser(HttpSession httpSession, String username) {
-        if (httpSession.getAttribute("currentUser") == null) {
-            httpSession.setAttribute("currentUser", JSON.toJSONString(userService.getUserByUsername(username)));
-        }
-    }
 
 
     /**

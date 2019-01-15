@@ -1,5 +1,6 @@
 package com.zhoubi.graindepot.service;
 
+import com.zhoubi.graindepot.bean.BaseUser;
 import com.zhoubi.graindepot.bean.UserBean;
 import com.zhoubi.graindepot.biz.UserSecurity;
 import org.apache.commons.lang.StringUtils;
@@ -42,7 +43,7 @@ public class GateUserDetailsService implements UserDetailsService {
         if (StringUtils.isBlank(username)) {
             throw new RuntimeException("用户名为空");
         }
-        UserBean info = userSecurity.getUserByUsername(username);
+        BaseUser info = userSecurity.getUserByUsername(username);
         if (info.getUsername() == null)
             throw new RuntimeException("用户名不存在");
 

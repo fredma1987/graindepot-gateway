@@ -1,5 +1,6 @@
 package com.zhoubi.graindepot.biz;
 
+import com.zhoubi.graindepot.bean.BaseUser;
 import com.zhoubi.graindepot.bean.UserBean;
 import com.zhoubi.graindepot.rpc.IUserService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
@@ -21,10 +22,10 @@ public class UserSecurity {
 
     @HystrixCommand(fallbackMethod = "fallbackMethod")
     //获取当前登录用户，登录专用方法
-    public UserBean getUserByUsername(String username) {
+    public BaseUser getUserByUsername(String username) {
         return userService.getUserByUsername(username);
     }
-    public UserBean fallbackMethod(String username) {
-        return new UserBean();
+    public BaseUser fallbackMethod(String username) {
+        return new BaseUser();
     }
 }

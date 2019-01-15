@@ -21,6 +21,10 @@ zuul:
     inout:
         path: /graindepot-inout/**
         serviceId: graindepot-inout
+    business:
+        path: /graindepot-business/**
+        serviceId: graindepot-business
+
 hystrix:
   command:
     default:

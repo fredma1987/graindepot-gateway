@@ -1,6 +1,7 @@
 package com.zhoubi.graindepot.rpc;
 
 
+import com.zhoubi.graindepot.bean.BaseUser;
 import com.zhoubi.graindepot.bean.UserBean;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("api")
 public interface IUserService {
     @RequestMapping(value = "/user/username/{username}", method = RequestMethod.GET)
-    UserBean getUserByUsername(@PathVariable("username") String username);
+    BaseUser getUserByUsername(@PathVariable("username") String username);
     @RequestMapping(value = "/feignTest", method = RequestMethod.GET)
     UserBean feignTest(@PathVariable("username") String username);
 
