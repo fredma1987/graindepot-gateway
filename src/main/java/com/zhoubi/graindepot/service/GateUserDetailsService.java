@@ -1,7 +1,6 @@
 package com.zhoubi.graindepot.service;
 
 import com.zhoubi.graindepot.bean.BaseUser;
-import com.zhoubi.graindepot.bean.UserBean;
 import com.zhoubi.graindepot.biz.UserSecurity;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;

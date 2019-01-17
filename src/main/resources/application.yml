@@ -21,9 +21,12 @@ zuul:
     inout:
         path: /graindepot-inout/**
         serviceId: graindepot-inout
-    business:
-        path: /graindepot-business/**
-        serviceId: graindepot-business
+    bussiness:
+        path: /graindepot-bussiness/**
+        serviceId: graindepot-bussiness
+    upload:
+        path: /upload/**
+        serviceId: grain-upload
 
 hystrix:
   command:
