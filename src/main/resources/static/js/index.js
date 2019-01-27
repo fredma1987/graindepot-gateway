@@ -1,30 +1,6 @@
 /**
  * Created by CC on 2018/2/24.
  */
-$(document).ready(function(){
-    $('#ith').combobox({
-        panelHeight:90,
-        onChange:function(newVal, oldVal){
-            var oldHref = $('#uiTheme').attr('href');
-            var newHref = oldHref.substring(0,oldHref.indexOf('themes')) + 'themes/' + newVal + '/easyui.css';
-            //console.log(newHref);
-            $('#uiTheme').attr('href', newHref);
-            //设置cookie值，并设置7天有效时间
-            $.cookie('themeName', newVal, {
-                path: '/',
-                expires : 7
-            });
-            $('#theamwin').window('close');
-            window.location.reload();
-        }
-    });
-
-    //if(<%=SYS_SJZX!=null%>){
-        $("#right_btn").show();
-    //}
-    foodHover(20,20);
-    setTimeout("picSwitch()",2000);
-});
 function logout(){
     var param={'user.username':'<%=user.getUsername()%>'};
     $.messager.confirm('确认','确认退出系统吗？',function(r){

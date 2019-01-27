@@ -24,6 +24,9 @@ zuul:
     bussiness:
         path: /graindepot-bussiness/**
         serviceId: graindepot-bussiness
+    base:
+        path: /graindepot-base/**
+        serviceId: graindepot-base
     upload:
         path: /upload/**
         serviceId: grain-upload
