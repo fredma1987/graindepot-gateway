@@ -69,7 +69,7 @@ public class SecurityController extends BaseController{
     public String main(Model model, HttpServletRequest request, HttpServletResponse response
             ,HttpSession session
             , @RequestParam(required = false) String error) {
-
+        model.addAttribute("user",getCurrentUser());
         return "main";
     }
 
