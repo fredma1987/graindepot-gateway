@@ -27,6 +27,9 @@ zuul:
     base:
         path: /graindepot-base/**
         serviceId: graindepot-base
+    video:
+        path: /graindepot-video/**
+        serviceId: graindepot-video
     upload:
         path: /upload/**
         serviceId: grain-upload
