@@ -77,6 +77,7 @@ public class SecurityController extends BaseController{
     public String toindex(Model model, HttpServletRequest request, HttpServletResponse response
             ,HttpSession session
             , @RequestParam(required = false) String error) throws IOException {
+        model.addAttribute("title","智慧粮库云平台");
         return "index";
     }
     @RequestMapping(value = "/logout")

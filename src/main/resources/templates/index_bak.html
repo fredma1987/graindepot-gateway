@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head th:include="head::head(${title})">
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>智能粮库云平台</title>
-</head>
-<body>
+    <meta charset="utf-8" />
+    <title>智慧粮库云平台</title>
+    <meta name="keywords" content="智慧粮库云平台" />
+    <meta name="description" content="智慧粮库云平台" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- basic styles -->
+    <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/css/font-awesome.min.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/css/font-awesome-ie7.min.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/css/jquery-ui-1.10.3.custom.min.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/css/chosen.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/css/datepicker.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/css/bootstrap-timepicker.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/css/daterangepicker.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/css/colorpicker.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/css/ace.min.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/css/ace-rtl.min.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/css/ace-skins.min.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/css/ace-ie.min.css}"/>
+    <script th:src="@{/assets/js/ace-extra.min.js}"></script>
+    <script th:src="@{/assets/js/html5shiv.js}"></script>
+    <script th:src="@{/assets/js/respond.min.js}"></script>
+    <script th:src="@{/assets/js/comm.js}"></script>
     <script th:inline="javascript">
         var ctx = [[${ctx}]];
     </script>
@@ -38,12 +54,36 @@
             font-size: 16px;
             line-height: 20px;
         }
+
+        .td1 {
+            text-align: center;
+            border-bottom: 1px dotted #fff;
+            border-right: 1px dotted #fff
+        }
+
+        .td2 {
+            text-align: center;
+            border-bottom: 1px dotted #fff;
+        }
+
+        .td3 {
+            text-align: right;
+            border-bottom: 1px dotted #fff;
+            border-right: 1px dotted #fff
+        }
+
+        .td4 {
+            text-align: right;
+            border-bottom: 1px dotted #fff;
+        }
     </style>
-    <div th:replace="navbar::navbar"></div>
-    <!--<div class="c-nav-wrap c-nav-wrap-dark c-nav" data-type="cn_zh" id="navigationBar">
+</head>
+<body>
+
+    <div class="c-nav-wrap c-nav-wrap-dark c-nav" data-type="cn_zh" id="navigationBar">
         <div class="c-nav-mod c-nav-mod-pc c-nav-dark">
             <div class="c-nav-top" id="qcTopNavFstLevel">
-                <a aria-controls="qcLeftNavSwitcher" aria-expanded="false" aria-haspopup="true" class="c-nav-all-trigger" hotrep="" href="javascript:;" id="qcLeftNavSwitcher" role="button">
+                <a aria-controls="qcLeftNavSwitcher" aria-expanded="false" aria-haspopup="true" class="c-nav-all-trigger" hotrep="" href="javascript:" id="qcLeftNavSwitcher" role="button">
                     <i class="c-nav-all-trigger-icon"></i> <span class="c-nav-all-trigger-text">辽宁省智慧粮库云平台</span> </a>
                 <div class="c-nav-top-operation">
                     <div class="c-nav-top-ctrl">
@@ -62,19 +102,19 @@
                             </a>
                         </li>
                         <li class="presentation J-qcTopNavItem" data-action="expand" data-title="粮食购销云" data-id="grandfather28">
-                            <a aria-controls="qcTopNavSheetWrapper" aria-expanded="false" aria-haspopup="true" hotrep="" href="javascript:;" role="button">粮食购销云</a>
+                            <a aria-controls="qcTopNavSheetWrapper" aria-expanded="false" aria-haspopup="true" hotrep="" href="javascript:" role="button">粮食购销云</a>
                         </li>
                         <li class="presentation J-qcTopNavItem" data-action="expand" data-title="智慧安防云" data-id="grandfather220">
-                            <a aria-controls="qcTopNavSheetWrapper" aria-expanded="false" aria-haspopup="true" hotrep="" href="javascript:;" role="button">智慧安防云</a>
+                            <a aria-controls="qcTopNavSheetWrapper" aria-expanded="false" aria-haspopup="true" hotrep="" href="javascript:" role="button">智慧安防云</a>
                         </li>
                         <li class="presentation J-qcTopNavItem" data-action="expand" data-title="智慧仓储云" data-id="grandfather242">
-                            <a aria-controls="qcTopNavSheetWrapper" aria-expanded="false" aria-haspopup="true" hotrep="" href="javascript:;" role="button">智慧仓储云</a>
+                            <a aria-controls="qcTopNavSheetWrapper" aria-expanded="false" aria-haspopup="true" hotrep="" href="javascript:" role="button">智慧仓储云</a>
                         </li>
                         <li class="presentation J-qcTopNavItem" data-action="expand" data-title="综合管理云" data-id="grandfather297">
-                            <a aria-controls="qcTopNavSheetWrapper" aria-expanded="false" aria-haspopup="true" hotrep="" href="javascript:;" role="button">综合管理云</a>
+                            <a aria-controls="qcTopNavSheetWrapper" aria-expanded="false" aria-haspopup="true" hotrep="" href="javascript:" role="button">综合管理云</a>
                         </li>
                         <li class="presentation J-qcTopNavItem" data-action="expand" data-title="综合决策云" data-id="grandfather301">
-                            <a aria-controls="qcTopNavSheetWrapper" aria-expanded="false" aria-haspopup="true" hotrep="" href="javascript:;" role="button">综合决策云</a>
+                            <a aria-controls="qcTopNavSheetWrapper" aria-expanded="false" aria-haspopup="true" hotrep="" href="javascript:" role="button">综合决策云</a>
                         </li>
                     </ul>
                     <div class="top-nav-sheet-wrapper">
@@ -89,22 +129,22 @@
                                                     </div>
                                                     <div class="menu-area-con" role="list" aria-labelledby="innertitle29">
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(29,30);">储备规模管理</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(29,30);">储备规模管理</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(29,31);">轮换计划管理</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(29,31);">轮换计划管理</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(29,32);">储备粮仓库基本信息</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(29,32);">储备粮仓库基本信息</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(29,33);">储备粮出入库业务监管</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(29,33);">储备粮出入库业务监管</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(29,34);">视频监控</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(29,34);">视频监控</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(29,35);">储备粮统计分析</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(29,35);">储备粮统计分析</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -113,22 +153,22 @@
                                                     </div>
                                                     <div class="menu-area-con" role="list" aria-labelledby="innertitle59">
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(59,60);">监测点管理</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(59,60);">监测点管理</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(59,61);">监测点参数设置</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(59,61);">监测点参数设置</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(59,62);">粮食行情数据采集</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(59,62);">粮食行情数据采集</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(59,63);">粮食行情数据审核</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(59,63);">粮食行情数据审核</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(59,64);">粮食行情数据分析</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(59,64);">粮食行情数据分析</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(59,65);">粮食行情信息动态</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(59,65);">粮食行情信息动态</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -137,40 +177,40 @@
                                                     </div>
                                                     <div class="menu-area-con" role="list" aria-labelledby="innertitle82">
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(82,83);">仓储企业信息管理</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(82,83);">仓储企业信息管理</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(82,84);">承储管理</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(82,84);">承储管理</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(82,85);">库存实物管理</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(82,85);">库存实物管理</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(82,86);">粮食出入库业务监管</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(82,86);">粮食出入库业务监管</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(82,87);">通风作业监管</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(82,87);">通风作业监管</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(82,88);">熏蒸作业监管</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(82,88);">熏蒸作业监管</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(82,89);">粮情监测</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(82,89);">粮情监测</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(82,90);">虫情监测</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(82,90);">虫情监测</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(82,91);">气体监测</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(82,91);">气体监测</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(82,92);">粮情检查</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(82,92);">粮情检查</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(82,403);">客户管理</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(82,403);">客户管理</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(82,407);">合同管理</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(82,407);">合同管理</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -183,22 +223,22 @@
                                                     </div>
                                                     <div class="menu-area-con" role="list" aria-labelledby="innertitle119">
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(119,120);">购销质量监管</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(119,120);">购销质量监管</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(119,121);">库存质量监管</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(119,121);">库存质量监管</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(119,122);">质检机构管理</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(119,122);">质检机构管理</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(119,123);">质监业务管理</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(119,123);">质监业务管理</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(119,124);">放心粮油示范企业管理</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(119,124);">放心粮油示范企业管理</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(119,415);">收获质量检查</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(119,415);">收获质量检查</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -207,13 +247,13 @@
                                                     </div>
                                                     <div class="menu-area-con" role="list" aria-labelledby="innertitle154">
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(154,155);">项目申报</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(154,155);">项目申报</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(154,391);">项目审核</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(154,391);">项目审核</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(154,156);">项目汇总</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(154,156);">项目汇总</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -222,13 +262,13 @@
                                                     </div>
                                                     <div class="menu-area-con" role="list" aria-labelledby="innertitle159">
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(159,160);">信用管理</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(159,160);">信用管理</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(159,161);">监督检查</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(159,161);">监督检查</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(159,162);">行政执法</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(159,162);">行政执法</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -241,10 +281,10 @@
                                                     </div>
                                                     <div class="menu-area-con" role="list" aria-labelledby="innertitle187">
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(187,188);">粮油加工管理</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(187,188);">粮油加工管理</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(187,189);">粮油产业发展项目管理</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(187,189);">粮油产业发展项目管理</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -253,7 +293,7 @@
                                                     </div>
                                                     <div class="menu-area-con" role="list" aria-labelledby="innertitle197">
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(197,198);">基础设施项目管理</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(197,198);">基础设施项目管理</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -262,22 +302,22 @@
                                                     </div>
                                                     <div class="menu-area-con" role="list" aria-labelledby="innertitle201">
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(201,202);">安全生产制度管理</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(201,202);">安全生产制度管理</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(201,203);">安全设施维护</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(201,203);">安全设施维护</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(201,204);">安全事故管理</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(201,204);">安全事故管理</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(201,205);">处置预案演练</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(201,205);">处置预案演练</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(201,206);">安全生产台帐</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(201,206);">安全生产台帐</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(201,207);">全省粮食安全预警预测</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(201,207);">全省粮食安全预警预测</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -326,10 +366,10 @@
                                                     </div>
                                                     <div class="menu-area-con" role="list" aria-labelledby="innertitle243">
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(243,246);">涉粮企业综合展示</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(243,246);">涉粮企业综合展示</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(243,247);">粮食信息可视化</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(243,247);">粮食信息可视化</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -338,19 +378,19 @@
                                                     </div>
                                                     <div class="menu-area-con" role="list" aria-labelledby="innertitle244">
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(244,250);">综合汇总分析</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(244,250);">综合汇总分析</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(244,251);">粮食库存专题分析</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(244,251);">粮食库存专题分析</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(244,252);">仓容专题分析</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(244,252);">仓容专题分析</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(244,253);">收购专题分析</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(244,253);">收购专题分析</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(244,254);">质量专题分析</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(244,254);">质量专题分析</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -359,19 +399,19 @@
                                                     </div>
                                                     <div class="menu-area-con" role="list" aria-labelledby="innertitle245">
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(245,275);">信息监测</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(245,275);">信息监测</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(245,276);">预警分析</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(245,276);">预警分析</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(245,277);">应急响应</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(245,277);">应急响应</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(245,278);">指挥调度</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(245,278);">指挥调度</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(245,279);">模拟演示</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(245,279);">模拟演示</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -390,16 +430,16 @@
                                                     </div>
                                                     <div class="menu-area-con" role="list" aria-labelledby="innertitle298">
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(298,383);">会员审核</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(298,383);">会员审核</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(298,384);">新闻类别</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(298,384);">新闻类别</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(298,386);">新闻列表</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(298,386);">新闻列表</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(298,385);">新闻审核</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(298,385);">新闻审核</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -415,25 +455,25 @@
                                                     </div>
                                                     <div class="menu-area-con" role="list" aria-labelledby="innertitle300">
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(300,377);">会展信息发布</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(300,377);">会展信息发布</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(300,378);">参展企业信息</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(300,378);">参展企业信息</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(300,379);">参展人员信息</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(300,379);">参展人员信息</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(300,374);">政策信息发布</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(300,374);">政策信息发布</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(300,434);">政策信息审核</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(300,434);">政策信息审核</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(300,380);">粮食行政许可</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(300,380);">粮食行政许可</a></div>
                                                         </div>
                                                         <div class="menu-item" role="listitem">
-                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="javascript:toMenus(300,381);">粮食行业职教</a></div>
+                                                            <div class="menu-item-tit"><a hotrep="" style="cursor:pointer;" target="_blank" onclick="toMenus(300,381);">粮食行业职教</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -463,12 +503,13 @@
                     </div>
                 </div>
                 <div class="c-nav-bm-right" id="qcTopNavSndOpera">
-                    &lt;!&ndash;<a  href="" hotrep="" style="display: none"
-                        ref="nofollow" class="nav-register-btn c-btn J-qcTopNavBtnRegister">免费注册</a>&ndash;&gt;
+                    <!--<a  href="" hotrep="" style="display: none"
+                        ref="nofollow" class="nav-register-btn c-btn J-qcTopNavBtnRegister">免费注册</a>-->
                 </div>
             </div>
         </div>
-    </div>-->
+    </div>
+    <script>window.__language = 'zh'</script>
     <!-- banner start -->
     <div class="c-hero">
         <div class="mod-hero" id="heroBanner">

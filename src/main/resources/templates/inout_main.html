@@ -3,8 +3,8 @@
 <head>
         <meta charset="utf-8" />
         <title>控制台</title>
-        <meta name="keywords" content="Bootstrap模版,Bootstrap模版下载,Bootstrap教程,Bootstrap中文" />
-        <meta name="description" content="站长素材提供Bootstrap模版,Bootstrap教程,Bootstrap中文翻译等相关Bootstrap插件下载" />
+        <meta name="keywords" content="控制台" />
+        <meta name="description" content="控制台" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- basic styles -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -823,7 +823,7 @@
                     animate: /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase()) ? false : 1000,
                     size: size
                 });
-            })
+            });
 
             $('.sparkline').each(function(){
                 var $box = $(this).closest('.infobox');
@@ -841,7 +841,7 @@
                 { label: "ad campaigns",  data: 8.2, color: "#AF4E96"},
                 { label: "direct traffic",  data: 18.6, color: "#DA5430"},
                 { label: "other",  data: 10, color: "#FEE074"}
-            ]
+            ];
             function drawPieChart(placeholder, data, position) {
                 $.plot(placeholder, data, {
                     series: {
@@ -953,7 +953,7 @@
             $('#recent-box [data-rel="tooltip"]').tooltip({placement: tooltip_placement});
             function tooltip_placement(context, source) {
                 var $source = $(source);
-                var $parent = $source.closest('.tab-content')
+                var $parent = $source.closest('.tab-content');
                 var off1 = $parent.offset();
                 var w1 = $parent.width();
 
