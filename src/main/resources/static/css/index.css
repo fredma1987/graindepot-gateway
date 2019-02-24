@@ -10,18 +10,18 @@
 .food_btn_left{
     display: none;
     left: 0;
-    background: url(/static/resource/images/teSeImg/food_left_btn.png) center center no-repeat;
+    background: url(/images/teSeImg/food_left_btn.png) center center no-repeat;
 }
 .food_btn_right{
     right: 0;
-    background: url(/static/resource/images/teSeImg/food_right_btn.png) center center no-repeat;
+    background: url(/images/teSeImg/food_right_btn.png) center center no-repeat;
 }
 .food_btn_left_hover{
-    background: rgba(0,0,0,0.2) url(/static/resource/images/teSeImg/food_left_btn_1.png) center center no-repeat;
+    background: rgba(0,0,0,0.2) url(/images/teSeImg/food_left_btn_1.png) center center no-repeat;
 }
 .food_btn_right_hover{
 
-    background: rgba(0,0,0,0.2) url(/static/resource/images/teSeImg/food_right_btn_1.png) center center no-repeat;
+    background: rgba(0,0,0,0.2) url(/images/teSeImg/food_right_btn_1.png) center center no-repeat;
 }
 .food_content{
     width: 50%;
