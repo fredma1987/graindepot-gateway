@@ -33,6 +33,9 @@ zuul:
     upload:
         path: /upload/**
         serviceId: grain-upload
+    report:
+      path: /graindepot-report/**
+      serviceId: graindepot-report
 
 hystrix:
   command:
