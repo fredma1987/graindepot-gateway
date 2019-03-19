@@ -25,7 +25,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.formLogin().loginPage("/login")
-                .defaultSuccessUrl("/main", true).permitAll()
+                .defaultSuccessUrl("/index", true).permitAll()
                 .and().logout().logoutUrl("/logout").logoutSuccessUrl("/login").invalidateHttpSession(true).permitAll()
                 .and().authorizeRequests()
                 .antMatchers("/assets/**").permitAll()
