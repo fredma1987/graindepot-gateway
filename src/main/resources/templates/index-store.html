@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="head::head(${title})">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+<link rel="stylesheet" th:href="@{/css/global-20189101522.css}">
+<link rel="stylesheet" th:href="@{/css/global-components.css}">
+<link th:href="@{/css/home-201808292215.css}" rel="stylesheet" media="screen">
+<link rel="stylesheet" type="text/css" th:href="@{/css/public.css}">
+<style>
+    .c-hero-icon-mod{
+        width: 350px;
+        height: 280px;
+        margin-top: -40px;
+        right: 0;
+        perspective: 800px;
+        background-size: cover
+    }
+</style>
+    <div th:replace="navbar::navbar"></div>
+    <div class="c-hero-section J-pdBanner " style="background:url('/images/store.png') no-repeat;background-size: 100% 100%">
+        <div class="c-hero-section-inner" style="padding:60px 0 0 10px">
+            <div class="c-hero-section-ct" style="width:100%;float:left;">
+                <h1 class="c-hero-section-tit">
+                    智能仓储云
+                </h1>
+                <div class="c-hero-section-des">
+                    <p class="pc-mod">发挥物联网、云计算、AI、大数据、协同等优势，实现粮食仓储作业智能化。</p>
+                </div>
+                <div class="c-hero-section-btn">
+                    <a
+                            role="button"
+                            class="c-btn buy  J-pdBannerBtn1"
+                            hotrep="product.yuntu.overview.banner.btn1">
+                        立即进入
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="c-section c-p-y-short sol-recommend overflow-hidden J-sectionCharacteristic">
+    <div class="c-section-inner">
+        <a class="anchor"> </a>
+        <ul class="c-grid c-grid-nocard-expand">
+            <li class="c-g-6 s-12">
+                <div class="c-media" style="cursor: pointer" onclick="doJump('/graindepot-bussiness/page/graintemp')">
+                    <div class="c-media-img">
+                        <i class="ico48 icocenter cvm"
+                           style="background-image: url(/images/1-5.svg)"></i>
+                    </div>
+                    <div class="c-media-body">
+                        <h4 class="c-media-heading"> 粮情监测 </h4>
+                        <p class="c-media-info">实时监测粮情信息，异常报警，及时反映粮食存储问题。 </p>
+                    </div>
+                </div>
+            </li>
+            <li class="c-g-6 s-12">
+                <div class="c-media"  style="cursor: pointer">
+                    <div class="c-media-img">
+                        <i class="ico48 icocenter cvm"
+                           style="background-image: url(/images/1-6.svg)"></i>
+                    </div>
+                    <div class="c-media-body">
+                        <h4 class="c-media-heading"> 仓窗控制 </h4>
+                        <p class="c-media-info"> 远程控制仓窗等设备，减少人力操作，结合智能分析模型实现智能通风，通风效果更有保障。 </p>
+                    </div>
+                </div>
+            </li>
+            <li class="c-g-6 s-12">
+                <div class="c-media"  style="cursor: pointer">
+                    <div class="c-media-img">
+                    <i class="ico48 icocenter cvm"
+                       style="background-image: url(/images/1-7.svg)"></i>
+                    </div>
+                    <div class="c-media-body">
+                        <h4 class="c-media-heading"> 低温储粮 </h4>
+                        <p class="c-media-info"> 远程控制低温储粮设备，如空调、热泵冷暖系统，智能分析，智能处理。 </p>
+                    </div>
+                </div>
+            </li>
+            <li class="c-g-6 s-12">
+                <div class="c-media"  style="cursor: pointer">
+                    <div class="c-media-img">
+                        <i class="ico48 icocenter cvm"
+                           style="background-image: url(/images/1-8.svg)"></i>
+                    </div>
+                    <div class="c-media-body">
+                        <h4 class="c-media-heading"> 气体监测 </h4>
+                        <p class="c-media-info"> 实时监测气体信息，异常报警，确保粮食在熏蒸时的作业安全。 </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
+

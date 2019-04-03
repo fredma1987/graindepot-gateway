@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="head::head(${title})">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+<link rel="stylesheet" th:href="@{/css/global-20189101522.css}">
+<link rel="stylesheet" th:href="@{/css/global-components.css}">
+<link th:href="@{/css/home-201808292215.css}" rel="stylesheet" media="screen">
+<link rel="stylesheet" type="text/css" th:href="@{/css/public.css}">
+<style>
+    .c-hero-icon-mod{
+        width: 350px;
+        height: 280px;
+        margin-top: -40px;
+        right: 0;
+        perspective: 800px;
+        background-size: cover
+    }
+</style>
+    <div th:replace="navbar::navbar"></div>
+    <div class="c-hero-section J-pdBanner " style="background:url('/images/biz.jpg') no-repeat;background-size: 100% 100%">
+        <div class="c-hero-section-inner" style="padding:60px 0 0 10px">
+            <div class="c-hero-section-ct" style="width:100%;float:left;">
+                <h1 class="c-hero-section-tit">
+                    综合管理云
+                </h1>
+                <div class="c-hero-section-des">
+                    <p class="pc-mod">发挥互联网、云计算、大数据、协同作业等优势，实现粮库日常经营业务管理智能化。</p>
+                </div>
+                <div class="c-hero-section-btn">
+                    <a
+                            role="button"
+                            href="/graindepot-bussiness/page/reserveScale"
+                            class="c-btn buy  J-pdBannerBtn1"
+                            hotrep="product.yuntu.overview.banner.btn1">
+                        立即进入
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="c-section c-p-y-short sol-recommend overflow-hidden J-sectionCharacteristic">
+    <div class="c-section-inner">
+        <a class="anchor"> </a>
+        <ul class="c-grid c-grid-nocard-expand">
+            <li class="c-g-6 s-12">
+                <div class="c-media" style="cursor: pointer" onclick="doJump('/graindepot-bussiness/page/reserveScale')">
+                    <div class="c-media-img">
+                        <i class="ico48 icocenter cvm"
+                           style="background-image: url(/images/1-9.svg)"></i>
+                    </div>
+                    <div class="c-media-body">
+                        <h4 class="c-media-heading"> 储备粮管理 </h4>
+                        <p class="c-media-info">已信息化实现储备粮管理，确保数据准确，存储安全。 </p>
+                    </div>
+                </div>
+            </li>
+            <li class="c-g-6 s-12">
+                <div class="c-media"  style="cursor: pointer" onclick="doJump('/graindepot-inout/settlement/toInBatchSettlement')">
+                    <div class="c-media-img">
+                        <i class="ico48 icocenter cvm"
+                           style="background-image: url(/images/1-10.svg)"></i>
+                    </div>
+                    <div class="c-media-body">
+                        <h4 class="c-media-heading"> 购销经营管理 </h4>
+                        <p class="c-media-info"> 粮库日常购销活动的综合管理平台，收购、销售信息全覆盖，管理更全面。 </p>
+                    </div>
+                </div>
+            </li>
+            <li class="c-g-6 s-12">
+                <div class="c-media"  style="cursor: pointer" onclick="doJump('/graindepot-bussiness/page/gqinspect')">
+                    <div class="c-media-img">
+                    <i class="ico48 icocenter cvm"
+                       style="background-image: url(/images/1-11.svg)"></i>
+                    </div>
+                    <div class="c-media-body">
+                        <h4 class="c-media-heading"> 质量管理 </h4>
+                        <p class="c-media-info"> 针对各仓粮食进行质量管理，确保粮食质量安全，有效防止质量问题的发生。 </p>
+                    </div>
+                </div>
+            </li>
+            <li class="c-g-6 s-12">
+                <div class="c-media"  style="cursor: pointer"  onclick="doJump('/graindepot-bussiness/page/equip')">
+                    <div class="c-media-img">
+                        <i class="ico48 icocenter cvm"
+                           style="background-image: url(/images/1-12.svg)"></i>
+                    </div>
+                    <div class="c-media-body">
+                        <h4 class="c-media-heading"> 设施设备管理 </h4>
+                        <p class="c-media-info"> 全面监管库区设施设备情况，生成台账报表，让库区资产纳入有效监管范围。 </p>
+                    </div>
+                </div>
+            </li>
+            <li class="c-g-6 s-12">
+                <div class="c-media"  style="cursor: pointer"  onclick="doJump('/graindepot-bussiness/page/druginstore')">
+                    <div class="c-media-img">
+                        <i class="ico48 icocenter cvm"
+                           style="background-image: url(/images/1-13.svg)"></i>
+                    </div>
+                    <div class="c-media-body">
+                        <h4 class="c-media-heading"> 药剂管理 </h4>
+                        <p class="c-media-info"> 针对药剂信息进行入库、保管、出库全程监管，确保药剂各环节安全。 </p>
+                    </div>
+                </div>
+            </li>
+            <li class="c-g-6 s-12">
+                <div class="c-media"  style="cursor: pointer" >
+                    <div class="c-media-img">
+                        <i class="ico48 icocenter cvm"
+                           style="background-image: url(/images/1-14.svg)"></i>
+                    </div>
+                    <div class="c-media-body">
+                        <h4 class="c-media-heading"> 安全生产管理 </h4>
+                        <p class="c-media-info"> 以信息化协助企业安全生产，记录安全作业各类台账，防患于未然。 </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
+

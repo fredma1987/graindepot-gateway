@@ -77,7 +77,40 @@ public class SecurityController extends BaseController{
             ,HttpSession session
             , @RequestParam(required = false) String error) {
         model.addAttribute("user",getCurrentUser());
+        model.addAttribute("title","粮食购销云");
         return "index-inout";
+    }
+    @RequestMapping(value = "/index-video", method = RequestMethod.GET)
+    public String indexvideo(Model model, HttpServletRequest request, HttpServletResponse response
+            ,HttpSession session
+            , @RequestParam(required = false) String error) {
+        model.addAttribute("user",getCurrentUser());
+        model.addAttribute("title","智能安防云");
+        return "index-video";
+    }
+    @RequestMapping(value = "/index-store", method = RequestMethod.GET)
+    public String indexstore(Model model, HttpServletRequest request, HttpServletResponse response
+            ,HttpSession session
+            , @RequestParam(required = false) String error) {
+        model.addAttribute("user",getCurrentUser());
+        model.addAttribute("title","智能仓储云");
+        return "index-store";
+    }
+    @RequestMapping(value = "/index-biz", method = RequestMethod.GET)
+    public String indexbiz(Model model, HttpServletRequest request, HttpServletResponse response
+            ,HttpSession session
+            , @RequestParam(required = false) String error) {
+        model.addAttribute("user",getCurrentUser());
+        model.addAttribute("title","综合管理云");
+        return "index-biz";
+    }
+    @RequestMapping(value = "/index-analysis", method = RequestMethod.GET)
+    public String indexanalysis(Model model, HttpServletRequest request, HttpServletResponse response
+            ,HttpSession session
+            , @RequestParam(required = false) String error) {
+        model.addAttribute("user",getCurrentUser());
+        model.addAttribute("title","综合决策云");
+        return "index-analysis";
     }
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)

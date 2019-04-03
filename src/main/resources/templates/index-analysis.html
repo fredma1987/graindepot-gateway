@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="head::head(${title})">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+<link rel="stylesheet" th:href="@{/css/global-20189101522.css}">
+<link rel="stylesheet" th:href="@{/css/global-components.css}">
+<link th:href="@{/css/home-201808292215.css}" rel="stylesheet" media="screen">
+<link rel="stylesheet" type="text/css" th:href="@{/css/public.css}">
+<style>
+    .c-hero-icon-mod{
+        width: 350px;
+        height: 280px;
+        margin-top: -40px;
+        right: 0;
+        perspective: 800px;
+        background-size: cover
+    }
+</style>
+    <div th:replace="navbar::navbar"></div>
+    <div class="c-hero-section J-pdBanner " style="background:url('/images/analysis.jpg') no-repeat;background-size: 100% 100%">
+        <div class="c-hero-section-inner" style="padding:60px 0 0 10px">
+            <div class="c-hero-section-ct" style="width:100%;float:left;">
+                <h1 class="c-hero-section-tit">
+                    综合决策云
+                </h1>
+                <div class="c-hero-section-des">
+                    <p class="pc-mod">发挥云计算、大数据、AI等优势，实现决策分析智能化，为领导决策提供数据支持。</p>
+                </div>
+                <div class="c-hero-section-btn">
+                    <a
+                            role="button"
+                            class="c-btn buy  J-pdBannerBtn1"
+                            hotrep="product.yuntu.overview.banner.btn1">
+                        立即进入
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="c-section c-p-y-short sol-recommend overflow-hidden J-sectionCharacteristic">
+    <div class="c-section-inner">
+        <a class="anchor"> </a>
+        <ul class="c-grid c-grid-nocard-expand">
+            <li class="c-g-6 s-12">
+                <div class="c-media" style="cursor: pointer">
+                    <div class="c-media-img">
+                        <i class="ico48 icocenter cvm"
+                           style="background-image: url(/images/1-15.svg)"></i>
+                    </div>
+                    <div class="c-media-body">
+                        <h4 class="c-media-heading"> 出入库分析 </h4>
+                        <p class="c-media-info">根据日常出入库信息进行全面分析，为领导提供出入库汇总数据。 </p>
+                    </div>
+                </div>
+            </li>
+            <li class="c-g-6 s-12">
+                <div class="c-media"  style="cursor: pointer">
+                    <div class="c-media-img">
+                        <i class="ico48 icocenter cvm"
+                           style="background-image: url(/images/1-16.svg)"></i>
+                    </div>
+                    <div class="c-media-body">
+                        <h4 class="c-media-heading"> 质量分析 </h4>
+                        <p class="c-media-info"> 针对粮食入库、保管、出库各环节质量数据做大数据分析，为粮食保管提供更全面的质量信息。 </p>
+                    </div>
+                </div>
+            </li>
+            <li class="c-g-6 s-12">
+                <div class="c-media"  style="cursor: pointer">
+                    <div class="c-media-img">
+                    <i class="ico48 icocenter cvm"
+                       style="background-image: url(/images/1-17.svg)"></i>
+                    </div>
+                    <div class="c-media-body">
+                        <h4 class="c-media-heading"> 库存分析 </h4>
+                        <p class="c-media-info"> 根据粮食品种、性质、收获年度、等级、质量等多维度进行库存分析，为领导决策提供数据支持。 </p>
+                    </div>
+                </div>
+            </li>
+            <li class="c-g-6 s-12">
+                <div class="c-media"  style="cursor: pointer"  onclick="doJump('/graindepot-bussiness/page/equip')">
+                    <div class="c-media-img">
+                        <i class="ico48 icocenter cvm"
+                           style="background-image: url(/images/1-18.svg)"></i>
+                    </div>
+                    <div class="c-media-body">
+                        <h4 class="c-media-heading"> 设施设备管理 </h4>
+                        <p class="c-media-info"> 全面监管库区设施设备情况，生成台账报表，让库区资产纳入有效监管范围。 </p>
+                    </div>
+                </div>
+            </li>
+            <li class="c-g-6 s-12">
+                <div class="c-media"  style="cursor: pointer" >
+                    <div class="c-media-img">
+                        <i class="ico48 icocenter cvm"
+                           style="background-image: url(/images/1-19.svg)"></i>
+                    </div>
+                    <div class="c-media-body">
+                        <h4 class="c-media-heading"> 合同分析 </h4>
+                        <p class="c-media-info"> 以具体合同或客户为入口，全面分析相关业务数据，对合同执行情况进行全面监管。 </p>
+                    </div>
+                </div>
+            </li>
+            <li class="c-g-6 s-12">
+                <div class="c-media"  style="cursor: pointer" >
+                    <div class="c-media-img">
+                        <i class="ico48 icocenter cvm"
+                           style="background-image: url(/images/1-20.svg)"></i>
+                    </div>
+                    <div class="c-media-body">
+                        <h4 class="c-media-heading"> 客户往来分析 </h4>
+                        <p class="c-media-info"> 已客户为切入点，分析与之相关的交易信息，建立信用体系，防止交易风险。 </p>
+                    </div>
+                </div>
+            </li>
+            <li class="c-g-6 s-12">
+                <div class="c-media"  style="cursor: pointer" >
+                    <div class="c-media-img">
+                        <i class="ico48 icocenter cvm"
+                           style="background-image: url(/images/1-21.svg)"></i>
+                    </div>
+                    <div class="c-media-body">
+                        <h4 class="c-media-heading"> 单仓管理 </h4>
+                        <p class="c-media-info"> 已具体仓房为切入点，分析与之相关的业务信息，为粮食质量追溯提供信息渠道。 </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
+
