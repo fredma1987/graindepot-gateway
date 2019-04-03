@@ -112,6 +112,14 @@ public class SecurityController extends BaseController{
         model.addAttribute("title","综合决策云");
         return "index-analysis";
     }
+    @RequestMapping(value = "/index-developer", method = RequestMethod.GET)
+    public String indexdeveloper(Model model, HttpServletRequest request, HttpServletResponse response
+            ,HttpSession session
+            , @RequestParam(required = false) String error) {
+        model.addAttribute("user",getCurrentUser());
+        model.addAttribute("title","云+社区");
+        return "index-developer";
+    }
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String toindex(Model model, HttpServletRequest request, HttpServletResponse response

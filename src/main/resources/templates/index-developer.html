@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="head::head(${title})">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body>
+<style>
+    .com-hero-event-desc-my{
+        margin-top: 6px;
+        font-size: 14px;
+        line-height: 21px;
+        color: #666;
+        /* white-space: nowrap; */
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
+<link rel="stylesheet" th:href="@{/css/global-201903131523.css}">
+<link rel="stylesheet" th:href="@{/css/base-201903281257.css}">
+<link rel="stylesheet" th:href="@{/css/ask-dialog-201812131119.css}">
+<link rel="stylesheet" th:href="@{/css/draft-master-v1.3.33.css}">
+<link th:href="@{/css/Home-201903071622.css}" rel="stylesheet" media="screen">
+<div th:replace="navbar::navbar"></div>
+<div class="J-body com-body">
+    <div class="com-2-hero">
+        <div class="com-2-hero-inner">
+            <ul class="com-2-hero-list">
+                <li class="hero-cell"><a href="#" class="com-2-hero-item white" hotrep="community.home.banner.full.0">
+                    <div class="com-2-hero-item-img" style="background-image:url(/images/2-1.jpg)"></div>
+                    <div class="com-2-hero-item-cnt">
+                        <div class="com-2-hero-item-mark-wrap">
+                            <span class="com-2-hero-item-mark" style="font-color:blue">运行环境检查</span>
+                        </div>
+                        <h3 class="com-2-hero-item-title">系统初次运行我们将检测您的运行环境是否正常</h3>
+                        <p class="com-2-hero-item-desc">系统将自动化检测并报告相关问题，并提供全面的解决方案。</p>
+                        <div class="com-2-hero-item-btns">
+                            <button class="com-arrow-btn primary" hotrep="community.home.banner.button.0"><span class="com-arrow-btn-text">点击阅读</span><span class="com-arrow-btn-caret"></span></button>
+                        </div>
+                    </div></a></li>
+                <li class="hero-cell"><a href="#" class="com-2-hero-item large white" hotrep="community.home.banner.full.1">
+                    <div class="com-2-hero-item-img" style="background-image:url(/images/2-2.jpg)"></div>
+                    <div class="com-2-hero-item-cnt">
+                        <div class="com-2-hero-item-mark-wrap">
+                            <span class="com-2-hero-item-mark">技术问题反馈</span>
+                        </div>
+                        <h3 class="com-2-hero-item-title">您可以将遇到的技术问题或建议反馈给我们</h3>
+                        <p class="com-2-hero-item-desc">让我们共同在技术的海洋中徜徉，共同耕耘粮食行业信息化往更高层次发展</p>
+                        <div class="com-2-hero-item-btns">
+                            <button class="com-arrow-btn blue-hole" hotrep="community.home.banner.button.1"><span class="com-arrow-btn-text">点击参与</span><span class="com-arrow-btn-caret"></span></button>
+                        </div>
+                    </div></a></li>
+                <li class="hero-cell"><a href="#" class="com-2-hero-item black" hotrep="community.home.banner.full.2">
+                    <div class="com-2-hero-item-img" style="background-image:url(/images/2-3.jpg)"></div>
+                    <div class="com-2-hero-item-cnt">
+                        <div class="com-2-hero-item-mark-wrap">
+                            <span class="com-2-hero-item-mark">专栏文章</span>
+                        </div>
+                        <h3 class="com-2-hero-item-title">好文章我们共分享 </h3>
+                        <p class="com-2-hero-item-desc">不论是技术性文章还是人文社科类文章，都可以让我们增长知识，开阔眼界</p>
+                        <div class="com-2-hero-item-btns">
+                            <button class="com-arrow-btn default" hotrep="community.home.banner.button.2"><span class="com-arrow-btn-text">点击阅读</span><span class="com-arrow-btn-caret"></span></button>
+                        </div>
+                    </div></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="com-body-main">
+        <ul class="com-hero-events">
+            <li class="event-cell">
+                <a href="" class="com-hero-event" hotrep="community.home.banner-addons.item.0">
+                    <img src="/images/3-1.svg" alt="" class="com-hero-event-img" />
+                    <h3 class="com-hero-event-title" title="基础信息配置">
+                        <span><em></em>基础信息配置</span></h3>
+                    <p class="com-hero-event-desc-my" title="基础信息配置">包括配置企业、库区、仓房、期初库存、系统启用时间、人员等各类基础信息</p>
+                </a>
+            </li>
+            <li class="event-cell">
+                <a href="" class="com-hero-event" hotrep="community.home.banner-addons.item.1">
+                    <img src="/images/3-2.svg" alt="" class="com-hero-event-img" />
+                    <h3 class="com-hero-event-title" title="硬件信息配置"><span><em></em>硬件信息配置</span></h3>
+                    <p class="com-hero-event-desc-my" title="硬件信息配置">包括视频监控、身份证读卡器、IC卡读卡器、地磅、
+                        红外光栅、粮情设备、气体检测设备、虫情检测设备、（准）低温储粮设备、仓窗控制器、气象站等设备信息</p>
+                </a>
+            </li>
+            <li class="event-cell">
+                <a href="" class="com-hero-event" hotrep="community.home.banner-addons.item.2">
+                    <img src="/images/3-3.svg" alt="" class="com-hero-event-img" />
+                    <h3 class="com-hero-event-title" title="插件安装"><span><em></em>插件安装</span></h3>
+                    <p class="com-hero-event-desc-my" title="插件安装">系统将根据您配置的硬件信息自动检测所需要安装的插件，
+                        请根据提示信息进行操作，如有疑问请联系系统管理员</p>
+                </a>
+            </li>
+            <li class="event-cell">
+                <a href="" class="com-hero-event" hotrep="community.home.banner-addons.item.3">
+                    <img src="/images/3-4.svg" alt="" class="com-hero-event-img" />
+                    <h3 class="com-hero-event-title" title="综合校验"><span><em></em>综合校验</span></h3>
+                    <p class="com-hero-event-desc-my" title="综合校验">完成配置后，系统还将对您的环境进行一次全面的检测，如有异常会在报告中予以提示</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+</body>
+</html>
+
