@@ -72,6 +72,13 @@ public class SecurityController extends BaseController{
         model.addAttribute("user",getCurrentUser());
         return "main";
     }
+    @RequestMapping(value = "/index-inout", method = RequestMethod.GET)
+    public String indexinout(Model model, HttpServletRequest request, HttpServletResponse response
+            ,HttpSession session
+            , @RequestParam(required = false) String error) {
+        model.addAttribute("user",getCurrentUser());
+        return "index-inout";
+    }
 
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String toindex(Model model, HttpServletRequest request, HttpServletResponse response

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:include="head::head(${title})">
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>智能粮库云平台</title>
+</head>
+
+<body>
+    <div th:replace="navbar::navbar"></div>
+    <div class="main-container-inner">
+        <div class="main-content">
+            <div class="page-content">
+                <h4 class="lighter">
+                    <i class="icon-hand-right icon-animated-hand-pointer blue"></i>
+                    <a href="#modal-wizard" data-toggle="modal" class="pink"> 粮食购销云 </a>
+                </h4>
+
+                <div class="hr hr-18 hr-double dotted"></div>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <div class="widget-box">
+                            <div class="widget-header widget-header-blue widget-header-flat">
+                                <h4 class="lighter"><i class="icon-desktop bigger-130"></i>入库管理</h4>
+                            </div>
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <div id="instore" class="row-fluid" data-target="#step-container-in">
+                                        <ul class="wizard-steps">
+                                            <li data-target="#step1" class="active"  style="cursor: pointer;" onclick="showInContent('1')">
+                                                <span class="step">1</span>
+                                                <span class="title">入库登记</span>
+                                            </li>
+
+                                            <li data-target="#step2" style="cursor: pointer;" onclick="showInContent('2')">
+                                                <span class="step">2</span>
+                                                <span class="title">扦样检验</span>
+                                            </li>
+
+                                            <li data-target="#step3" style="cursor: pointer;" onclick="showInContent('3')">
+                                                <span class="step">3</span>
+                                                <span class="title">入库检斤</span>
+                                            </li>
+
+                                            <li data-target="#step4" style="cursor: pointer;" onclick="showInContent('4')">
+                                                <span class="step">4</span>
+                                                <span class="title">收购结算</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <hr />
+                                    <div class="step-content row-fluid position-relative" id="step-container-in">
+                                        <div class="step-pane active" style="min-height:60px" id="step1">
+                                            <h4 class="lighter block green">入库登记：售粮人车辆基本信息登记&#12288;<a href="/graindepot-inout/register/toInRegister" target="_blank" style="font-size:14px;;">>>立即进入</a></h4>
+                                        </div>
+
+                                        <div class="step-pane" id="step2" style="min-height:60px">
+                                            <h4 class="lighter block green">扦样检验：粮食质量检验&#12288;<a href="/graindepot-inout/inspect/toInInspect" target="_blank" style="font-size:14px;;">>>立即进入</a></h4>
+                                        </div>
+
+                                        <div class="step-pane" id="step3" style="min-height:60px">
+                                            <h4 class="lighter block green">入库检斤：毛重、皮重检斤&#12288;<a href="/graindepot-inout/weight/toInWeight" target="_blank" style="font-size:14px;;">>>立即进入</a></h4>
+                                        </div>
+
+                                        <div class="step-pane" id="step4" style="min-height:60px">
+                                            <h4 class="lighter block green">收购结算：结算离库&#12288;<a href="/graindepot-inout/settlement/toInSettlement" target="_blank" style="font-size:14px;;">>>立即进入</a></h4>
+                                        </div>
+                                    </div>
+                                </div><!-- /widget-main -->
+                            </div><!-- /widget-body -->
+                        </div>
+                        <hr />
+                        <div class="widget-box">
+                            <div class="widget-header widget-header-blue widget-header-flat">
+                                <h4 class="lighter"><i class="icon-legal bigger-130"></i>出库管理</h4>
+                            </div>
+                            <div class="widget-body">
+                                <div class="widget-main">
+                                    <div id="outstore" class="row-fluid" data-target="#step-container-out">
+                                        <ul class="wizard-steps">
+                                            <li data-target="#step5" class="active" style="cursor: pointer;" onclick="showOutContent('5')">
+                                                <span class="step">1</span>
+                                                <span class="title">出库检验</span>
+                                            </li>
+                                            <li data-target="#step6" style="cursor: pointer;" onclick="showOutContent('6')">
+                                                <span class="step">2</span>
+                                                <span class="title">预收款</span>
+                                            </li>
+                                            <li data-target="#step7" style="cursor: pointer;" onclick="showOutContent('7')">
+                                                <span class="step">3</span>
+                                                <span class="title">出库登记</span>
+                                            </li>
+
+                                            <li data-target="#step8" style="cursor: pointer;" onclick="showOutContent('8')">
+                                                <span class="step">4</span>
+                                                <span class="title">出库检斤</span>
+                                            </li>
+
+                                            <li data-target="#step9" style="cursor: pointer;" onclick="showOutContent('9')">
+                                                <span class="step">5</span>
+                                                <span class="title">销售结算</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <hr />
+                                    <div class="step-content row-fluid position-relative" id="step-container-out">
+                                        <div class="step-pane active" id="step5" style="min-height:60px">
+                                            <h4 class="lighter block green">出库检验：针对需出库的粮食进行质检&#12288;<a href="/graindepot-bussiness/page/gqinspect" target="_blank" style="font-size:14px;;">>>立即进入</a></h4>
+                                        </div>
+
+                                        <div class="step-pane" id="step6" style="min-height:60px">
+                                            <h4 class="lighter block green">预收款：针对签订销售合同的客户进行预收款&#12288;<a href="/graindepot-inout/page/prerece" target="_blank" style="font-size:14px;;">>>立即进入</a></h4>
+                                        </div>
+
+                                        <div class="step-pane" id="step7" style="min-height:60px">
+                                            <h4 class="lighter block green">出库登记：买粮人车辆基本信息登记&#12288;<a href="/graindepot-inout/register/toOutRegister" target="_blank" style="font-size:14px;;">>>立即进入</a></h4>
+                                        </div>
+
+                                        <div class="step-pane" id="step8" style="min-height:60px">
+                                            <h4 class="lighter block green">出库检斤：毛重、皮重检斤&#12288;<a href="/graindepot-inout/weight/toOutWeight" target="_blank" style="font-size:14px;;">>>立即进入</a></h4>
+                                        </div>
+                                        <div class="step-pane" id="step9" style="min-height:60px">
+                                            <h4 class="lighter block green">销售结算：粮食出库结算&#12288;<a href="/graindepot-inout/settlement/toOutSettlement" target="_blank" style="font-size:14px;;">>>立即进入</a></h4>
+                                        </div>
+                                    </div>
+                                </div><!-- /widget-main -->
+                            </div><!-- /widget-body -->
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /.page-content -->
+        </div><!-- /.main-content -->
+
+    </div><!-- /.main-container-inner -->
+<script type="text/javascript">
+    function showInContent(step){
+        $("#instore").find("[data-target]").each(function(){
+            $(this).removeClass("complete");
+            $(this).removeClass("active");
+        });
+        $("#instore").find("[data-target='"+"#step"+step+"']").each(function(){
+            $(this).addClass("active");
+        });
+        for(var i=1;i<step;i++){
+            $("#instore").find("[data-target='"+"#step"+i+"']").each(function(){
+                $(this).addClass("complete");
+            });
+        }
+        $("#step-container-in").find(".step-pane").each(function(){
+            $(this).removeClass("active");
+        });
+        $("#step"+step).addClass("active");
+    }
+    function showOutContent(step){
+        $("#outstore").find("[data-target]").each(function(){
+            $(this).removeClass("complete");
+            $(this).removeClass("active");
+        });
+        $("#outstore").find("[data-target='"+"#step"+step+"']").each(function(){
+            $(this).addClass("active");
+        });
+        for(var i=5;i<step;i++){
+            $("#outstore").find("[data-target='"+"#step"+i+"']").each(function(){
+                $(this).addClass("complete");
+            });
+        }
+        $("#step-container-out").find(".step-pane").each(function(){
+            $(this).removeClass("active");
+        });
+        $("#step"+step).addClass("active");
+    }
+</script>
+</body>
+</html>
+
